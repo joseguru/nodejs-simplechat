@@ -38,7 +38,7 @@ socket.on('message', function(data) {
 	numMsgs++;
 	$('#msgs').append( function() {
 		var d = $('<div class="'+classes[numMsgs%2]+'"/>');
-		d.html(ms.username + ' says: ' + ms.message);
+		d.text(ms.username + ' says: ' + ms.message);
 		return d;
 	});
 	var objDiv = document.getElementById('msgs');

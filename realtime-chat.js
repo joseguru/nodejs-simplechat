@@ -3,14 +3,12 @@ var http = require('http'),
 	fs = require('fs'),
 	io = require('socket.io');
 
-require('response');
-
 var server = http.createServer(function(req, res) {
 	fs.readFile('chat.html', 'binary', function(err, data) {
 		if( err ) {
 			res.writeHead(500, {'Content-type': 'text/html'});
 			res.write(data + "\n");
-			res.close();
+			res.end();
 			return;
 		}
 
